@@ -1,4 +1,4 @@
-﻿namespace RemoteControlClient
+﻿namespace RemoteControlClient.Views
 {
     partial class ConnectToServerForm
     {
@@ -76,7 +76,6 @@
             userLogin.Name = "userLogin";
             userLogin.Size = new Size(269, 26);
             userLogin.TabIndex = 7;
-            userLogin.Text = "gfyuvh";
             // 
             // label4
             // 
@@ -159,7 +158,6 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
-            MinimizeBox = false;
             Name = "ConnectToServerForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Удалённый рабочий стол";

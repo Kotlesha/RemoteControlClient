@@ -1,4 +1,4 @@
-﻿namespace RemoteControlClient
+﻿namespace RemoteControlClient.Views
 {
     partial class RemoteControlForm
     {
@@ -30,24 +30,41 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RemoteControlForm));
             screenPictureBox = new PictureBox();
+            OpenChat = new Button();
             ((System.ComponentModel.ISupportInitialize)screenPictureBox).BeginInit();
             SuspendLayout();
             // 
             // screenPictureBox
             // 
-            screenPictureBox.Dock = DockStyle.Fill;
+            screenPictureBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            screenPictureBox.BorderStyle = BorderStyle.FixedSingle;
             screenPictureBox.Location = new Point(0, 0);
             screenPictureBox.Name = "screenPictureBox";
-            screenPictureBox.Size = new Size(1297, 718);
+            screenPictureBox.Size = new Size(1296, 740);
+            screenPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             screenPictureBox.TabIndex = 0;
             screenPictureBox.TabStop = false;
+            screenPictureBox.MouseClick += screenPictureBox_MouseClick;
+            screenPictureBox.MouseDoubleClick += screenPictureBox_MouseDoubleClick;
             screenPictureBox.MouseMove += screenPictureBox_MouseMove;
+            // 
+            // OpenChat
+            // 
+            OpenChat.Anchor = AnchorStyles.Bottom;
+            OpenChat.Location = new Point(510, 750);
+            OpenChat.Name = "OpenChat";
+            OpenChat.Size = new Size(253, 28);
+            OpenChat.TabIndex = 1;
+            OpenChat.Text = "Отправить сообщение";
+            OpenChat.UseVisualStyleBackColor = true;
+            OpenChat.Click += OpenChat_Click;
             // 
             // RemoteControlForm
             // 
             AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1297, 718);
+            ClientSize = new Size(1296, 790);
+            Controls.Add(OpenChat);
             Controls.Add(screenPictureBox);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "RemoteControlForm";
@@ -55,6 +72,7 @@
             Text = "Управление удалённым рабочим столом";
             FormClosed += RemoteControlForm_FormClosed;
             Load += RemoteControlForm_Load;
+            KeyDown += RemoteControlForm_KeyDown;
             ((System.ComponentModel.ISupportInitialize)screenPictureBox).EndInit();
             ResumeLayout(false);
         }
@@ -62,5 +80,6 @@
         #endregion
 
         private PictureBox screenPictureBox;
+        private Button OpenChat;
     }
 }

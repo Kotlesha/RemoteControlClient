@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
+﻿using RemoteControlClient.Models;
 
-namespace RemoteControlClient
+namespace RemoteControlClient.Controllers.ProcessingData
 {
     public class ImageChannel : Channel
     {
@@ -31,6 +26,7 @@ namespace RemoteControlClient
             {
                 var image = await GetScreenshotsAsync();
                 SetImage(image);
+                await Task.Delay(100);
             }
         }
     }

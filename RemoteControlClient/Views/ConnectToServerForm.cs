@@ -1,6 +1,6 @@
-using System.Net;
+using RemoteControlClient.Controllers;
 
-namespace RemoteControlClient
+namespace RemoteControlClient.Views
 {
     public partial class ConnectToServerForm : Form
     {
@@ -48,6 +48,7 @@ namespace RemoteControlClient
                 return;
             }
 
+            channels.Name = userLogin.Text;
             RemoteControlForm form = new(channels);
             Hide();
             form.ShowDialog();

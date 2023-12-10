@@ -1,3 +1,5 @@
+using RemoteControlClient.Views;
+
 namespace RemoteControlClient
 {
     internal static class Program
